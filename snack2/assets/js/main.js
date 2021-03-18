@@ -1,39 +1,59 @@
-// Consegna
-// Creare una Todo-list in cui si possano aggiungere nuovi todo e rimuoverli.
-// Rendiamo il tutto gradevole alla vista.
-// Bonus
-// Permettiamo la modifica di un todo già aggiunto.
+// Snack2
+// Creare un array di oggetti di squadre di calcio.
+// Ogni squadra avrà diverse proprietà: nome, punti fatti, falli subiti.
+// Nome sarà l’unica proprietà da compilare, le altre saranno tutte settate a 0.
+// Generare numeri random al posto degli 0 nelle proprietà: Punti fatti e falli subiti.
+// Infine usando la destrutturazione creiamo un nuovo array i cui elementi contengono
+// solo nomi e falli subiti e stampiamo tutto in console.
 
-$(document).ready(function(){
-  // al click salvo il valore inserito dall'utente
-  $('#add').click(function(){
-    var toDo = $('#toDoIn').val();
-    $('#toDoIn').val('');
-    // clono tutto il template
-    var template = $('#toDo li').clone();
-    // sostituisco il valore con il valore inserito dall'utente
-    template.children('span.template').text(toDo);
-    // al click di Fatto! la To-Do corrispondente viene rimossa
-    template.children('span.delete').click(function() {
-      $(this).parent().remove();
-    });
-    // stampo il valore su HTML
-    $('#todos').append(template);
-  });
 
-  // prova modifica
-  $(document).on('click', '.lista li .edit', function (){
-  if ($(this).addClass('active')) {
-    $(this).siblings('input').hide();
-    var title = $(this).siblings('input').val();
+const teams = [
+{
+  nome: 'Juventus',
+  puntifatti: 0,
+  fallisubiti: 0
+},
+{
+  nome: 'Inter',
+  puntifatti: 0,
+  fallisubiti: 0
+},
+{
+  nome: 'Milan',
+  puntifatti: 0,
+  fallisubiti: 0
+},
+{
+  nome: 'Atalanta',
+  puntifatti: 0,
+  fallisubiti: 0
+},
+{
+  nome: 'Roma',
+  puntifatti: 0,
+  fallisubiti: 0
+}];
 
-    $(this).siblings('span.template').text(title).show();
+for (let i = 0; i < teams.length; i++) {
+  teams[i].puntifatti = randomNumber(0,120);
+  teams[i].fallisubiti = randomNumber(0,100);
+};
+console.log(teams);
+
+const newTeams = [];
+
+for (let i = 0; i < teams.length; i++) {
+  const thisTeam = teams[i];
+  const {nome, fallisubiti} = thisTeam;
+  newTeams.push({nome, fallisubiti});
+};
+console.log(newTeams);
+
+// FUNZIONI
+function randomNumber (min, max) {
+  if (isNaN(min) || isNaN(max)) {
+    console.log("Non hai inserito un numero!");
   } else {
-    $(this).siblings('span.template').hide();
-    var title = $(this).siblings('span.template').text();
-
-    $(this).siblings('input').val(title).show();
+    return Math.floor(Math.random() * (max - min + 1) + min);
   }
-  $(this).toggleClass('active');
-  });
-});
+};
