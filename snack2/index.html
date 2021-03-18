@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/master.css">
+    <title>Todos</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous"></script>
+    <script src="assets/js/main.js"></script>
+</head>
+<body>
+  <div id="form">
+    <h1>TO-DO LIST
+    <br>
+    (clicca "Fatto!" per togliere la To-Do dalla lista)</h1>
+    <ul id="todos">
+    </ul>
+    <input id="toDoIn" type="text" name="toDo" value="" placeholder="Scrivi la To-Do">
+    <button id="add" type="button" name="button">Aggiungi To-Do alla lista</button>
+    <div id="toDo">
+      <li>
+        <span class="template"></span>
+        <input id="toDoMod"type="text" name="" value="">
+        <span class="edit">Modifica</span>
+        <span class="delete">: Fatto!</span>
+      </li>
+    </div>
+  </div>
+</body>
+</html>
+
+<!-- Consegna
+Creare una Todo-list in cui si possano aggiungere nuovi todo e rimuoverli.
+Rendiamo il tutto gradevole alla vista.
+Bonus
+Permettiamo la modifica di un todo già aggiunto. -->
