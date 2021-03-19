@@ -12,5 +12,50 @@
 // e colore e opacità del fiocco per ogni gatto.
 
 // Milestone 1
-// creo array di oggetti
-const 
+$(document).ready(function (){
+  // creo array di oggetti
+  const cats = [
+    {
+      nome: 'Tom',
+      eta: 10,
+      colore: 'grigio',
+      sesso: 'maschio'
+    },
+    {
+      nome: 'Lilly',
+      eta: 6,
+      colore: 'crema',
+      sesso: 'femmina'
+    },
+    {
+      nome: 'Garfield',
+      eta: 5,
+      colore: 'tigrato',
+      sesso: 'maschio'
+    },
+    {
+      nome: 'Silvestro',
+      eta: 15,
+      colore: 'nero',
+      sesso: 'maschio'
+    },
+    {
+      nome: 'Birba',
+      eta: 3,
+      colore: 'arancione',
+      sesso: 'femmina'
+    },
+    {
+      nome: 'Fifi',
+      eta: 1,
+      colore: 'rosa',
+      sesso: 'femmina'
+    }
+  ];
+
+  // ciclo l'array con forEach e stampo colore e nome su HTML
+  cats.forEach((item) => {
+    $('#cats').append(`<li>${item.colore}, ${item.nome} </li>`)
+  });
+
+});
