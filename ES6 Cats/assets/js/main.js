@@ -4,58 +4,78 @@
 // Tramite la funzione .forEach(), stampare in pagina tutti i gattini, ciascuno con il
 // proprio colore e il proprio nome.
 // Milestone 2
-// Dividere i gatti in due contenitori distinti in base al sesso e aggiungere a fianco di ogni gattino un fiocco colorato
-// di rosa, se femmina, o di blu, se maschio. Il colore del fiocco deve essere più tenue se il gatto è più giovane, più scuro
+// Dividere i gatti in due contenitori distinti in base al sesso e
+// aggiungere a fianco di ogni gattino un fiocco colorato di rosa, se Femmina,
+// o di blu, se Maschio.
+// Il colore del fiocco deve essere più tenue se il gatto è più giovane, più scuro
 // se il gatto è più vecchio.
 // Milestone 3
-// Creare un nuovo array con prima tutti i gattini femmina e poi tutti i gattini maschio, inserendo solamente nome e colore
+// Creare un nuovo array con prima tutti i gattini Femmina e poi tutti i gattini Maschio, inserendo solamente nome e colore
 // e colore e opacità del fiocco per ogni gatto.
 
-// Milestone 1
+
 $(document).ready(function (){
+  // Milestone 1
   // creo array di oggetti
   const cats = [
     {
       nome: 'Tom',
       eta: 10,
       colore: 'grigio',
-      sesso: 'maschio'
+      sesso: 'Maschio'
     },
     {
       nome: 'Lilly',
       eta: 6,
       colore: 'crema',
-      sesso: 'femmina'
+      sesso: 'Femmina'
     },
     {
       nome: 'Garfield',
       eta: 5,
       colore: 'tigrato',
-      sesso: 'maschio'
+      sesso: 'Maschio'
     },
     {
       nome: 'Silvestro',
       eta: 15,
       colore: 'nero',
-      sesso: 'maschio'
+      sesso: 'Maschio'
     },
     {
       nome: 'Birba',
       eta: 3,
       colore: 'arancione',
-      sesso: 'femmina'
+      sesso: 'Femmina'
     },
     {
       nome: 'Fifi',
       eta: 1,
       colore: 'rosa',
-      sesso: 'femmina'
+      sesso: 'Femmina'
     }
   ];
+  console.log(cats);
 
   // ciclo l'array con forEach e stampo colore e nome su HTML
   cats.forEach((item) => {
     $('#cats').append(`<li>${item.colore}, ${item.nome} </li>`)
+    console.log(`<li>${item.colore}, ${item.nome} </li>`);
   });
+
+  // Milestone 2
+  // filtro array Cats in base al sesso e stampo anche su HTML
+  const maleCats = cats.filter((item) => item.sesso == 'Maschio');
+  const femaleCats = cats.filter((item) => item.sesso == 'Femmina');
+  console.log(maleCats);
+  console.log(femaleCats);
+
+  // ciclo gli array con forEach per verificare il sesso
+  
+
+
+
+
+
 
 });
