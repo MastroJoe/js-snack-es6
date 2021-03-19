@@ -13,6 +13,13 @@
   justify-content: space-around;
 }
 
+h1 {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: end;
+  padding-bottom: 35px;
+}
+
 #cats li {
   font-size: 30px;
   font-weight: bold;
@@ -40,9 +47,16 @@
 }
 
 .giovane i {
-  opacity: 0.4;
+  opacity: 0.5;
 }
 
 .adulto i {
   opacity: 1;
+}
+
+#cats-mix li {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: end;
+  list-style: none;
 }

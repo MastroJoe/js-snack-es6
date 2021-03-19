@@ -10,7 +10,8 @@
 // Il colore del fiocco deve essere più tenue se il gatto è più giovane, più scuro
 // se il gatto è più vecchio.
 // Milestone 3
-// Creare un nuovo array con prima tutti i gattini Femmina e poi tutti i gattini Maschio, inserendo solamente nome e colore
+// Creare un nuovo array con prima tutti i gattini Femmina e poi tutti i gattini Maschio,
+// inserendo solamente nome e colore
 // e colore e opacità del fiocco per ogni gatto.
 
 
@@ -84,7 +85,21 @@ $(document).ready(function (){
   });
 
   // Milestone 3
+  // con Spread unisco gli array del gender, prima le Femmine poi i Maschi
+  let catsMix = [...femaleCats, ...maleCats];
+  console.log(catsMix);
 
+  catsMix.forEach((item) => {
+    if (item.sesso == 'Maschio' && item.eta <= 5) {
+    $('#cats-mix').append(`<li class="blue giovane">${item.nome}, ${item.colore} <i class="fas fa-ribbon"></i></li>`)
+  } else if (item.sesso == 'Maschio' && item.eta > 5) {
+    $('#cats-mix').append(`<li class="blue adulto">${item.nome}, ${item.colore} <i class="fas fa-ribbon"></i></li>`)
+  } else if (item.sesso == 'Femmina' && item.eta <= 5) {
+    $('#cats-mix').append(`<li class="pink giovane">${item.nome}, ${item.colore} <i class="fas fa-ribbon"></i></li>`)
+  } else if (item.sesso == 'Femmina' && item.eta > 5) {
+    $('#cats-mix').append(`<li class="pink adulto">${item.nome}, ${item.colore} <i class="fas fa-ribbon"></i></li>`)
+  }
+  });
 
 
 
