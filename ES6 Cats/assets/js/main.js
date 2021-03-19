@@ -60,7 +60,7 @@ $(document).ready(function (){
   // ciclo l'array con forEach e stampo colore e nome su HTML
   cats.forEach((item) => {
     $('#cats').append(`<li>${item.colore}, ${item.nome} </li>`)
-    console.log(`<li>${item.colore}, ${item.nome} </li>`);
+    console.log(`${item.colore}, ${item.nome}`);
   });
 
   // Milestone 2
@@ -71,7 +71,17 @@ $(document).ready(function (){
   console.log(femaleCats);
 
   // ciclo gli array con forEach per verificare il sesso
-  
+  cats.forEach((item) => {
+    if (item.sesso == 'Maschio') {
+    $('#cats-gender').append(`<li class="blue">${item.nome}, ${item.sesso} <i class="fas fa-ribbon"></i></li>`)
+  } else {
+    $('#cats-gender').append(`<li class="pink">${item.nome}, ${item.sesso} <i class="fas fa-ribbon"></i></li>`)
+  }
+  });
+
+
+
+
 
 
 
