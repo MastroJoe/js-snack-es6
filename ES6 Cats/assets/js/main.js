@@ -20,7 +20,7 @@ $(document).ready(function (){
   const cats = [
     {
       nome: 'Tom',
-      eta: 10,
+      eta: 2,
       colore: 'grigio',
       sesso: 'Maschio'
     },
@@ -44,7 +44,7 @@ $(document).ready(function (){
     },
     {
       nome: 'Birba',
-      eta: 3,
+      eta: 8,
       colore: 'arancione',
       sesso: 'Femmina'
     },
@@ -72,18 +72,18 @@ $(document).ready(function (){
 
   // ciclo gli array con forEach per verificare il sesso
   cats.forEach((item) => {
-    if (item.sesso == 'Maschio') {
-    $('#cats-gender').append(`<li class="blue">${item.nome}, ${item.sesso} <i class="fas fa-ribbon"></i></li>`)
-  } else {
-    $('#cats-gender').append(`<li class="pink">${item.nome}, ${item.sesso} <i class="fas fa-ribbon"></i></li>`)
+    if (item.sesso == 'Maschio' && item.eta <= 5) {
+    $('#cats-gender').append(`<li class="blue giovane">${item.nome}, ${item.sesso} <i class="fas fa-ribbon"></i></li>`)
+  } else if (item.sesso == 'Maschio' && item.eta > 5) {
+    $('#cats-gender').append(`<li class="blue adulto">${item.nome}, ${item.sesso} <i class="fas fa-ribbon"></i></li>`)
+  } else if (item.sesso == 'Femmina' && item.eta <= 5) {
+    $('#cats-gender').append(`<li class="pink giovane">${item.nome}, ${item.sesso} <i class="fas fa-ribbon"></i></li>`)
+  } else if (item.sesso == 'Femmina' && item.eta > 5) {
+    $('#cats-gender').append(`<li class="pink adulto">${item.nome}, ${item.sesso} <i class="fas fa-ribbon"></i></li>`)
   }
   });
 
-
-
-
-
-
+  // Milestone 3
 
 
 

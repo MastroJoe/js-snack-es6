@@ -31,10 +31,18 @@
   font-size: 35px;
 }
 
-#blue i {
-  color: lightblue;
+.blue i {
+  color: #82C5F9;
 }
 
-#pink i {
-  color: pink;
+.pink i {
+  color: #F775C8;
+}
+
+.giovane i {
+  opacity: 0.4;
+}
+
+.adulto i {
+  opacity: 1;
 }
