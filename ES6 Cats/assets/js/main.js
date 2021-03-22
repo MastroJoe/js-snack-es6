@@ -86,7 +86,7 @@ $(document).ready(function (){
 
   // Milestone 3
   // con Spread unisco gli array del gender, prima le Femmine poi i Maschi
-  let catsMix = [...femaleCats, ...maleCats];
+  const catsMix = [...femaleCats, ...maleCats];
   console.log(catsMix);
 
   catsMix.forEach((item) => {
@@ -101,6 +101,31 @@ $(document).ready(function (){
   }
   });
 
+  const newCats = catsMix.map((item, index, array) => {
+    const {nome, colore} = item;
 
+    let opacita;
+    if (item.eta <= 5) {
+      opacita = 'chiara';
+    } else {
+      opacita = 'scura';
+    }
 
+    let fiocco;
+    if (item.sesso == 'Maschio') {
+      fiocco = 'azzurro';
+    } else if (item.sesso == 'Femmina'){
+      fiocco = 'rosa';
+    }
+
+    let obj = {
+      nome,
+      colore,
+      opacita,
+      fiocco
+    }
+
+    return obj;
+  })
+  console.log(newCats);
 });
